@@ -1,0 +1,10 @@
+html {
+    background-color: forestgreen;
+}
+
+
+#rightmenu {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
