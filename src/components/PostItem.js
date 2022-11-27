@@ -1,21 +1,41 @@
-import React from 'react'
-import Posts from "./Posts";
+import React from "react";
+import {Link} from "react-router-dom";
 
-const PostItem = ({ posts }) => {
-return (
-       <div className="ui card">
-            <div className="content">
-                <h3 className='centered aligned header'>
-                {posts.title}
-                </h3>
 
-                <div className='centered aligned description'>
-                    <p>  {posts.description}</p>
-                  
-                </div>
+const PostItem = ({ posts, headerElement, children }) => {
+  
+    return (
+      <div className="ui card">
+        <div className="content">
+          <div className="left floated aligned header">{posts.title}</div>
+          {headerElement}
+          <div className="centered aligned description">
+            <p>{posts.description}</p>
+            <p>{posts.price}</p>
+            <div className="extra content">
+              <div className=" center aligned header">
+                <Link to={`posts/${posts._id}`}>View Listing</Link>
+              </div>
             </div>
-       </div>
-)
-};
-
-export default PostItem;
+          </div>
+          {children}
+          <div
+            role="list"
+            className="ui divided relaxed list"
+            style={{ color: "#444", clear: 'both' }}
+          >
+            {posts.messages.map((message) => {
+              return (
+                <div key={message._id} role="listitem" className="item">
+                  <b>{message.user.username}</b>
+                  <p className="content">{message.content}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  export default PostItem;
