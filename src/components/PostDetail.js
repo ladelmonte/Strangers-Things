@@ -21,12 +21,11 @@ const PostDetail = (props) => {
         const { success, error, message } = await addMessage(token, POST_ID, messageText);
 
         if (success) {
-            // only clear input if api call worked
             setMessageText('');
             
             console.log('we successfully added a comment!');
 
-            // refresh all vacations to get new comment
+            
             await getPosts();
         } else {
             setErrorMessage(error);

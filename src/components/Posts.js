@@ -3,7 +3,7 @@ import PostItem from "./PostItem";
 import { Link } from "react-router-dom";
 import { deletePost } from "../api/api";
 
-import '../App.css';
+import './App.css';
 
 
  const Posts = ({ posts, setPost,  token }) => {
@@ -77,11 +77,6 @@ import '../App.css';
                 </button>
             ) : null}
             </PostItem>
-
-
-
-
-
             );
          })}
    </div> }
@@ -89,6 +84,4 @@ import '../App.css';
      );
  };
      
-
-
 export default Posts;

@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import { registerUser, loginUser } from "../api/api";
 import {useParams, useHistory } from "react-router-dom"
 
-const AccountForm = ({ setToken }) => {
+const Account = ({ setToken }) => {
     
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -59,4 +59,5 @@ const title = action === "login" ? 'Log In' : "Sign Up"
     );
 };
 
-export default AccountForm;
+export default Account;
+

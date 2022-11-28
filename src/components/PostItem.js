@@ -32,10 +32,11 @@ const PostItem = ({ posts, headerElement, children }) => {
                 </div>
               );
             })}
-          </div>
+          </div>random
         </div>
       </div>
     );
   };
   
   export default PostItem;
+
